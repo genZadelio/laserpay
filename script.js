@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
@@ -104,58 +106,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const industryData = {
     commerce: {
       label: 'E-COMMERCE',
-      title: 'Turn first-time buyers into loyal customers.',
-      description: 'Bring online and in-store payments together, lift conversion and reduce fraud with one intelligent payment stack.',
-      points: ['Smart checkout that converts', 'Unified multi-channel reporting', 'Built-in fraud protection'],
-      count: '+ 70,000 businesses trust Laserpay',
+      title: 'Example: unify online and in-store payment views.',
+      description: 'This fictional scenario illustrates how a merchant dashboard could arrange payments, reporting, and risk-control concepts.',
+      points: ['Sample checkout layout', 'Illustrative reporting states', 'Fictional risk controls'],
+      count: 'Illustrative commerce scenario — no customer data',
       image: 'assets/images/industry-commerce.jpg',
       alt: 'E-commerce solution',
-      metric: '₹ 24.8L',
-      metricLabel: '+18.4% revenue'
+      metric: 'Example',
+      metricLabel: 'sample transaction'
     },
     education: {
       label: 'EDUCATION',
-      title: 'Make every fee payment feel simple.',
-      description: 'Collect course and institution fees, manage installments and pay your educators on time from one focused workspace.',
-      points: ['Flexible fee collection', 'Automated reminders', 'Bulk educator payouts'],
-      count: '+ 21,000 institutions grow with Laserpay',
+      title: 'Example: simplify course-fee workflows.',
+      description: 'A fictional education scenario demonstrates layouts for fees, installments, reminders, and educator-payout summaries.',
+      points: ['Sample fee layouts', 'Illustrative reminders', 'Fictional payout summaries'],
+      count: 'Illustrative education scenario — no institution data',
       image: 'assets/images/industry-education.jpg',
       alt: 'Education payments solution',
-      metric: '₹ 12.4L',
-      metricLabel: '+9.8% collected'
+      metric: 'Example',
+      metricLabel: 'sample collection'
     },
     bfsi: {
       label: 'BFSI',
-      title: 'Build financial experiences that scale.',
-      description: 'Streamline collections, automate recurring payments and reconcile every transaction with a secure, flexible stack.',
-      points: ['Smart collection workflows', 'Real-time reconciliation', 'Risk-aware payment routing'],
-      count: '+ 2,800 fintechs use Laserpay',
+      title: 'Example: reconcile collection workflows.',
+      description: 'A fictional finance scenario demonstrates how collections, recurring-payment states, and reconciliation labels could be presented.',
+      points: ['Sample collection layouts', 'Illustrative reconciliation', 'Fictional routing states'],
+      count: 'Illustrative finance scenario — no company data',
       image: 'assets/images/industry-finance.jpg',
       alt: 'Financial services solution',
-      metric: '₹ 8.9L',
-      metricLabel: '+22.1% efficiency'
+      metric: 'Example',
+      metricLabel: 'sample reconciliation'
     },
     saas: {
       label: 'SAAS',
-      title: 'Make global growth feel local.',
-      description: 'Accept payments in more than 100 currencies, support flexible subscriptions and manage vendor payouts without friction.',
-      points: ['100+ currencies', 'Flexible subscriptions', 'Global vendor payouts'],
-      count: '+ 13,500 software teams powered',
+      title: 'Example: present multi-currency subscriptions.',
+      description: 'A fictional software scenario illustrates currency, subscription, and vendor-payout dashboard states.',
+      points: ['Multi-currency example', 'Sample subscription states', 'Fictional vendor summaries'],
+      count: 'Illustrative software scenario — no team data',
       image: 'assets/images/industry-saas.jpg',
       alt: 'SaaS team collaborating',
-      metric: '$ 42.6K',
-      metricLabel: '+31.4% global revenue'
+      metric: 'Example',
+      metricLabel: 'sample volume'
     },
     freelancer: {
       label: 'FREELANCER',
-      title: 'Get paid for the work you are proud of.',
-      description: 'Accept payments without a website, create a branded storefront and get paid across the world with no extra setup.',
-      points: ['No-code payment links', 'Your own payment page', 'Global currency support'],
-      count: '+ 38,000 independent professionals',
+      title: 'Example: create a sample payment request.',
+      description: 'A fictional independent-work scenario illustrates payment-link, storefront, and currency interface layouts.',
+      points: ['Sample payment-link layout', 'Illustrative storefront', 'Fictional currency states'],
+      count: 'Illustrative freelancer scenario — no professional data',
       image: 'assets/images/hero-founder.jpg',
       alt: 'Independent professional',
-      metric: '₹ 1.8L',
-      metricLabel: '+16.2% earnings'
+      metric: 'Example',
+      metricLabel: 'sample invoice'
     }
   };
   const industryPanel = $('#industryPanel');
@@ -217,42 +219,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Auth dialog
+  // Informational demo dialog. This project intentionally has no authentication form.
   const dialog = $('#authDialog');
   const authTitle = $('#authTitle');
   const authSubtitle = $('#authSubtitle');
   const authEyebrow = $('#authEyebrow');
-  const authSubmit = $('#authSubmit');
-  let authMode = 'signup';
-  function openModal(mode) {
-    authMode = mode;
-    const signup = mode === 'signup';
-    authTitle.textContent = signup ? 'Create your account' : 'Welcome back';
-    authSubtitle.textContent = signup ? 'Start accepting payments in minutes.' : 'Log in to your Laserpay workspace.';
-    authEyebrow.textContent = signup ? 'WELCOME TO LASERPAY' : 'YOUR LASERPAY ACCOUNT';
-    authSubmit.innerHTML = `${signup ? 'Create account' : 'Log in'} <svg><use href="#i-arrow"/></svg>`;
+  function openModal() {
+    authTitle.textContent = 'Explore the interface';
+    authSubtitle.textContent = 'Explore this non-transactional UI concept without creating an account.';
+    authEyebrow.textContent = 'LASERPAY EDUCATIONAL CONCEPT';
     if (dialog?.showModal) dialog.showModal();
   }
-  $$('[data-modal]').forEach((button) => button.addEventListener('click', () => openModal(button.dataset.modal)));
+  $$('[data-modal]').forEach((button) => button.addEventListener('click', openModal));
   $('.auth-dialog__close')?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', (event) => {
     const rect = dialog.getBoundingClientRect();
     const outside = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
     if (outside) dialog.close();
-  });
-  $('#authForm')?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const submit = $('#authSubmit');
-    submit.disabled = true;
-    submit.textContent = authMode === 'signup' ? 'Creating your account…' : 'Logging in…';
-    window.setTimeout(() => {
-      form.reset();
-      submit.disabled = false;
-      submit.innerHTML = `${authMode === 'signup' ? 'Create account' : 'Log in'} <svg><use href="#i-arrow"/></svg>`;
-      dialog?.close();
-      showToast(authMode === 'signup' ? 'Account request received' : 'Welcome back');
-    }, 700);
   });
 
   // Small toast for utility actions
@@ -266,14 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 3600);
   }
-  $('.ask-button')?.addEventListener('click', () => showToast('Laser is ready', 'Ask us anything about payments, payouts or banking.'));
-  $('.icon-button')?.addEventListener('click', () => showToast('Language selector', 'More languages are coming soon.'));
+  $('.ask-button')?.addEventListener('click', () => showToast('Example assistant', 'This local demo does not send questions to an AI or support service.'));
+  $('.icon-button')?.addEventListener('click', () => showToast('Language selector', 'This control is illustrative in the demo.'));
 
   // Keep in-page actions feeling like a product, not dead links.
   $$('a[href="#footer"]').forEach((link) => link.addEventListener('click', (event) => {
     event.preventDefault();
-    showToast('Laserpay support', 'Our team is available 24/7 for your questions.');
+    showToast('Demo information', 'This educational concept has no live support or financial services.');
   }));
 
-  $('#year').textContent = new Date().getFullYear();
 });

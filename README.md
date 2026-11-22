@@ -1,10 +1,25 @@
-# Laserpay
+# Laserpay — educational finance UI demo
 
-A responsive, self-contained payments and business-banking marketing website built with HTML, CSS and vanilla JavaScript.
+Laserpay is an original, responsive portfolio concept for a fictional finance dashboard. It uses only HTML, CSS, and vanilla JavaScript.
 
-## Run locally in VS Code
+- **Live demo:** https://laserpay-adelio.netlify.app/
+- **Source:** https://github.com/genZadelio/laserpay
 
-Open the `Laserpay` folder in VS Code. You can preview it with **Live Server** or run:
+## Demo safeguards
+
+This is a non-transactional UI demonstration:
+
+- No login, sign-up, password, payment, or personal-data form
+- No backend, analytics, tracking pixels, or financial API connection
+- Fictional sample values and interface labels only
+- No claims of endorsement by real companies or customers
+- No financial, banking, payment, payroll, or credit services
+
+The public deployment is hosted on Netlify. GitHub Pages should remain disabled for this repository while the shared `genzadelio.github.io` host is under Google Safe Browsing review.
+
+## Run locally
+
+From this directory:
 
 ```powershell
 python -m http.server 8000
@@ -12,29 +27,18 @@ python -m http.server 8000
 
 Then open `http://127.0.0.1:8000`.
 
-## Upload to GitHub
+## Deploy
 
-```powershell
-git init
-git add .
-git commit -m "Initial Laserpay website"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-For GitHub Pages, open the repository's **Settings → Pages**, select **Deploy from a branch**, choose `main` and `/ (root)`. The website will be published at `https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/`.
+The repository root is the Netlify publish directory. `netlify.toml` applies security headers and a restrictive Content Security Policy. The page has no build step or runtime dependencies.
 
 ## Included
 
 - Responsive desktop and mobile navigation
 - Five-slide hero carousel with controls
-- Product suites for payments, payouts, banking, payroll and credit
-- Interactive industry solution tabs
-- Developer API showcase with language tabs
-- FAQ accordion
-- Sign-up/login modal and toast feedback
-- Scroll-reveal animations and accessible reduced-motion support
+- Product-suite, industry, and developer concept sections
+- Interactive code tabs and FAQ accordion
+- Informational demo dialog without authentication fields
+- Scroll-reveal animations and reduced-motion support
 
 ## Structure
 
@@ -42,6 +46,7 @@ For GitHub Pages, open the repository's **Settings → Pages**, select **Deploy 
 - `styles.css` — responsive design system and components
 - `script.js` — interactions and content switching
 - `assets/images/` — local editorial imagery
-- `assets/favicon.svg` — Laserpay favicon
+- `assets/favicon.svg` — original project favicon
+- `netlify.toml` — Netlify publishing and security-header configuration
 
-The brand, name, copy, interface visuals and implementation are original to this project. Photography is sourced from Unsplash.
+The implementation and sample content are original to this project. This is not affiliated with or endorsed by any financial provider, payment network, or company shown as an example workflow.
